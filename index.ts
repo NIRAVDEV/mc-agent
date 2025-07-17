@@ -3,9 +3,11 @@ import dotenv from "dotenv";
 import { verifyTokenHandler } from "./lib/handlers/verifyToken";
 import { startServerHandler } from "./lib/handlers/startServer";
 import bodyParser from "body-parser";
-import { stopServerHandler } from "./lib/agent/handlers/stopServer";
-import { restartServerHandler } from "./lib/agent/handlers/restartServer";
+// At the top with other imports
+import { stopServerHandler } from "./lib/handlers/stopServer";
+import { restartServerHandler } from "./lib/handlers/restartServer";
 
+// Inside your app setup
 app.post("/api/agent/stop-server", stopServerHandler);
 app.post("/api/agent/restart-server", restartServerHandler);
 
