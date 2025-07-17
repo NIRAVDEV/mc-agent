@@ -3,6 +3,11 @@ import dotenv from "dotenv";
 import { verifyTokenHandler } from "./lib/handlers/verifyToken";
 import { startServerHandler } from "./lib/handlers/startServer";
 import bodyParser from "body-parser";
+import { stopServerHandler } from "./lib/agent/handlers/stopServer";
+import { restartServerHandler } from "./lib/agent/handlers/restartServer";
+
+app.post("/api/agent/stop-server", stopServerHandler);
+app.post("/api/agent/restart-server", restartServerHandler);
 
 dotenv.config();
 const app = express();
